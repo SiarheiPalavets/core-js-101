@@ -7,7 +7,7 @@
  ************************************************************************************************ */
 
 
-/**
+/** 1
  * Returns the rectangle object with width and height parameters and getArea() method
  *
  * @param {number} width
@@ -20,12 +20,15 @@
  *    console.log(r.height);      // => 20
  *    console.log(r.getArea());   // => 200
  */
-function Rectangle(/* width, height */) {
-  throw new Error('Not implemented');
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+  this.getArea = () => this.width * this.height;
+  return this;
 }
 
 
-/**
+/** 2
  * Returns the JSON representation of specified object
  *
  * @param {object} obj
@@ -35,12 +38,12 @@ function Rectangle(/* width, height */) {
  *    [1,2,3]   =>  '[1,2,3]'
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
-function getJSON(/* obj */) {
-  throw new Error('Not implemented');
+function getJSON(obj) {
+  return JSON.stringify(obj);
 }
 
 
-/**
+/** 3
  * Returns the object of specified type from JSON representation
  *
  * @param {Object} proto
@@ -51,12 +54,13 @@ function getJSON(/* obj */) {
  *    const r = fromJSON(Circle.prototype, '{"radius":10}');
  *
  */
-function fromJSON(/* proto, json */) {
-  throw new Error('Not implemented');
+function fromJSON(proto, json) {
+  const obj = JSON.parse(json);
+  return Object.setPrototypeOf(obj, proto);
 }
 
 
-/**
+/** 4
  * Css selectors builder
  *
  * Each complex selector can consists of type, id, class, attribute, pseudo-class

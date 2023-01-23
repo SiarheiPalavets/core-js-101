@@ -6,7 +6,7 @@
  ************************************************************************************************ */
 
 
-/**
+/** 1
  * Return Promise object that is resolved with string value === 'Hooray!!! She said "Yes"!',
  * if boolean value === true is passed, resolved with string value === 'Oh no, she said "No".',
  * if boolean value === false is passed, and rejected
@@ -33,7 +33,7 @@ function willYouMarryMe(/* isPositiveAnswer */) {
 }
 
 
-/**
+/** 2
  * Return Promise object that should be resolved with array containing plain values.
  * Function receive an array of Promise objects.
  *
@@ -48,11 +48,11 @@ function willYouMarryMe(/* isPositiveAnswer */) {
  *    })
  *
  */
-function processAllPromises(/* array */) {
-  throw new Error('Not implemented');
+function processAllPromises(arr) {
+  return Promise.all(arr);
 }
 
-/**
+/** 3
  * Return Promise object that should be resolved with value received from
  * Promise object that will be resolved first.
  * Function receive an array of Promise objects.
@@ -71,11 +71,11 @@ function processAllPromises(/* array */) {
  *    })
  *
  */
-function getFastestPromise(/* array */) {
-  throw new Error('Not implemented');
+function getFastestPromise(arr) {
+  return Promise.race(arr);
 }
 
-/**
+/** 4
  * Return Promise object that should be resolved with value that is
  * a result of action with values of all the promises that exists in array.
  * If some of promise is rejected you should catch it and process the next one.
